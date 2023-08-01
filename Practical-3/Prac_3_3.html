@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <script>
+    // Function to validate input
+    function validateInput() {
+      var input = document.getElementById("myInput").value;
+      var numbersRegex = /^[0-9]+$/;
+
+      if (numbersRegex.test(input)) {
+        alert('Bravo, Input is Valid');
+        return true;
+      } else {
+        alert('Kindly input only Numbers Only');
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="return validateInput()">
+    <label for="myInput">Enter letters only:</label>
+    <input type="text" id="myInput" name="myInput" required>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
