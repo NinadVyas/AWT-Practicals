@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt</title>
+  </head>
+  <body style="background-color: black">
+    <h1 style="color: white; font-size: 5rem">
+      Please let us know your id number!!!
+    </h1>
+    <button
+      onclick="fun()"
+      style="
+        background-color: blue;
+        color: azure;
+        width: 10rem;
+        height: 4rem;
+        font-size: 2rem;
+      "
+    >
+      try it
+    </button>
+
+    <h2 id="non" style="font-size: 6rem; color: red"></h2>
+  </body>
+  <script>
+    function fun() {
+      var n = prompt("What's your id number");
+      if (n != null) {
+        document.getElementById("non").innerHTML = n;
+      }
+    }
+  </script>
+</html>
