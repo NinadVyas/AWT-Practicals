@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Email Validation</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+    <script src="script.js"></script>
+    <script>
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validateForm() {
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value.trim();
+
+            if (validateEmail(email)) {
+                document.getElementById('myForm').submit();
+                alert('Input Is Valid');
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+    </script>
+</body>
+
+</html>
