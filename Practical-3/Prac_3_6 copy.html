@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="myForm">
+    <p>
+      <label>
+        <input type="radio" name="radioGroup" value="option1"> Option 1
+      </label>
+      <label>
+        <input type="radio" name="radioGroup" value="option2"> Option 2
+      </label>
+      <label>
+        <input type="radio" name="radioGroup" value="option3"> Option 3
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" name="checkbox1" value="checkbox1"> Checkbox 1
+      </label>
+      <label>
+        <input type="checkbox" name="checkbox2" value="checkbox2"> Checkbox 2
+      </label>
+      <label>
+        <input type="checkbox" name="checkbox3" value="checkbox3"> Checkbox 3
+      </label>
+    </p>
+    <p>
+      <label>
+        Select an option:
+        <select name="dropdown" id="dropdown">
+          <option value="">-- Select --</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+      </label>
+    </p>
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      const radioButtons = document.getElementsByName('radioGroup');
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const dropdown = document.getElementById('dropdown');
+    
+      let radioSelected = false;
+      for (let radioButton of radioButtons) {
+        if (radioButton.checked) {
+          radioSelected = true;
+          break;
+        }
+      }
+    
+      let checkboxSelected = false;
+      for (let checkbox of checkboxes) {
+        if (checkbox.checked) {
+          checkboxSelected = true;
+          break;
+        }
+      }
+    
+      const dropdownSelected = dropdown.value !== '';
+    
+      if (radioSelected && checkboxSelected && dropdownSelected) {
+        alert('Form Submitted Successfully!');
+        var form =document.getElementById('myForm');
+        form.submit()
+      } else {
+        alert('Please enter all required input.');
+      }
+    }
+    </script>
+    
+</body>
+</html>
