@@ -1,0 +1,42 @@
+<html>
+<head>
+<title> Password Matching Validation </title>
+</head>
+
+<body>
+<form>
+
+<h3> Confirm password Validation Example </h3>
+
+Password:<br />
+      <input type="password" name="password" id="password_"/><br />
+
+      Confirm Password:<br />
+      <input type="password" name="confirmpassword" id="confirm_password"/><br />
+
+
+      <input type="button" value="Register" onclick="details()" />
+
+</form>
+</body>
+<script>
+function details(){
+
+    let ps = document.getElementById("password_").value;
+    let cps = document.getElementById("confirm_password").value;
+
+
+    if(ps==cps){
+        alert("Password Is Correct")
+        return true;
+        }
+        else{
+        alert("password must be same!");
+        return false;
+        }
+    
+    }
+</script>
+</html>
+
+ 
