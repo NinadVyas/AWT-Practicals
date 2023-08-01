@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">Input:<br/>
+      <input type="text" id="myInput" oninput="validateInput()"/><br />
+<span id="error" style="color: red;"></span>    </form>
+</body>
+<script>
+    function validateInput(){
+    var input = document.getElementById('myInput');
+
+    var error = document.getElementById('error');
+        const pattern = /^.{6,12}$/;
+        var value = input.value;
+        if (pattern.test(value)){
+        error.textContent = '';            
+        }
+        else
+        {
+            error.textContent='Input must contain 6 to 12 characters';
+        }
+    }
+</script>
+</html>
