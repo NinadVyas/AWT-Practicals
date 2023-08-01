@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <div style=" padding-left:30rem;padding-top:5rem;">
+    <form style="margin-left: 5rem;">
+        <input type="text" name="text" id="io1" placeholder="Type Here"/>
+        <button id="btn1" style="color: black;background-color:white;margin-bottom:2rem ;margin-top:3rem">ClickMe</button>
+    </form>
+    <div style="gap: 4;">
+    <div style="height: 200px; width: 400px; background-color:blue" id="myelement"></div>
+    <div style="height: 200px; width: 400px; background-color:red" id="parent">
+        <div style="height: 140px; width: 300px; background-color:green ; align-items:center" id="child"></div>  
+    </div>
+    </div>
+</div>
+</body>
+
+<script>
+    //input event
+    const io = document.getElementById('io1');
+    io.addEventListener('input',function(event){
+        console.log('Input value changed:',event.target.value);
+    });
+
+    //click event
+    const btn = document.getElementById('btn1');
+    btn.addEventListener('click',function(event){
+        console.log('Button clicked!');
+    });
+
+    //mouse event
+    const element = document.getElementById('myelement');
+    element.addEventListener('mousemove',function(event){
+    console.log('Mouse Cordinates:',event.clientX,event.clientY);
+    });
+
+    //event propagation
+    const parentElement = document.getElementById('parent');
+    const childElement = document.getElementById('child');
+    parentElement.addEventListener('click',function(event){
+        console.log('Parent Element Cliked');
+    });
+       
+    childElement.addEventListener('click',function(event){
+        console.log('Child Elemetn Clicked');
+        event.stopPropagation();
+    });
+</script>
+</html>
