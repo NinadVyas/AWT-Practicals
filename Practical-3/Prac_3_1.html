@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+    Enter Text:
+      <input type="text" name="textbox" id="myTextbox" /><br />
+      <input type="submit" value="Submit" /><br />
+    </form>
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded',function(){
+        const form = document.getElementById('myForm');
+        const textbox = document.getElementById('myTextbox');
+
+        form.addEventListener('submit',function(event){
+        event.preventDefault();
+
+        const value = textbox.value.trim();
+
+        const pattern = /\S+/;
+
+        if (pattern.test(value)){
+            form.submit();
+            
+        }
+        else
+        {
+            alert('Please Enter A Value');
+        }
+        });
+    });
+</script>
+</html>
