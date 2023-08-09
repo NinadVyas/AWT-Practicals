@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body style="background-color: black">
+  <div style="padding-left: 30rem; padding-top: 5rem">
+      <input type="text" name="text" id="io1" placeholder="Type Here" style="margin-top: 0.5rem;" />
+      <div id="inoutput" style="color: aliceblue;"> </div>
+
+      <button id="btn1" style="
+              color: black;
+              background-color: white;
+              margin-bottom: 0.5rem;
+              margin-top: 0.5rem;
+            ">
+        ClickMe
+      </button>
+      <div id="btnoutput" style="color: white;"></div>
+    <div style="height: 200px; width: 400px; background-color: blue" id="myelement"></div>
+    <div id="msuoutput" style="color: white;"></div>
+  </div>
+  </div>
+
+  <script>
+    //input event
+    const io = document.getElementById("io1");
+    const inputoutput = document.getElementById("inoutput");
+
+    io.addEventListener("input", (event) => {
+      const { value } = event.target;
+      inputoutput.innerText = `You typed: ${value}`;
+    });
+
+    //click event
+    const btn = document.getElementById("btn1");
+    const buttonoutput = document.getElementById("btnoutput");
+
+    btn.addEventListener("click", (event) => {
+      buttonoutput.textContent = ` Button clicked!`;
+    });
+
+    //mouse event
+    const element = document.getElementById("myelement");
+    const mouseoutput = document.getElementById("msuoutput");
+
+    element.addEventListener("mouseover", () => {
+      mouseoutput.textContent = 'Mouse is over the area!';
+    });
+
+    element.addEventListener("mouseout", () => {
+      mouseoutput.textContent = 'Mouse is over the area!';
+    });
+  </script>
+
+</html>

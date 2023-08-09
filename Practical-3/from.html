@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form name="myform" method="post"> 
+      Full Name:<br />
+      <input type="text" name="fullName" id="full_name" /><br />
+
+      Email:<br />
+      <input type="email" name="email" id="email_"/><br />
+
+      Uername:<br />
+      <input type="text" name="username" id="user_name"/><br />
+
+      Password:<br />
+      <input type="password" name="password" id="password_"/><br />
+
+      Confirm Password:<br />
+      <input type="password" name="confirmpassword" id="confirm_password"/><br />
+
+      Birth Date:<br />
+      <input type="date" name="birthdate" id="birth_date"/><br />
+
+      Address:<br />
+      <textarea name="address" id="address_"></textarea><br />
+
+      Gender:<br />
+      <select name="gender" id="gender_">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="others">Others</option></select
+      ><br />
+
+      <input type="button" value="Register" onclick="details()" />
+
+      <div id="output" style="background-color: rgb(224, 224, 224); margin-left:2px"></div>
+    </form>
+  </body>
+  <script>
+    function details(){
+    let fn = document.getElementById("full_name").value;
+    let em = document.getElementById("email_").value;
+    let un = document.getElementById("user_name").value;
+    let ps = document.getElementById("password_").value;
+    let cps = document.getElementById("confirm_password").value;
+    let bd = document.getElementById("birth_date").value;
+    let ad = document.getElementById("address_").value;
+    let gn = document.getElementById("gender_").value;
+
+    if(ps==cps){
+        return true;
+        }
+        else{
+        alert("password must be same!");
+        return false;
+        }
+        
+
+    let info = "<h2>Resgistration Form:<h2/>" +
+               "<p><strong>Full Name: </strong>" + fn + "</p>" +
+               "<p><strong>Email: </strong>" + em + "</p>" +
+               "<p><strong>Username: </strong>" + un + "</p>" +
+               "<p><strong>Password: </strong>" + ps + "</p>" +
+               "<p><strong>Confirm Password: </strong>" + cps + "</p>" +
+               "<p><strong>Birth Date: </strong>" + bd + "</p>" +
+               "<p><strong>Address: </strong>" + ad + "</p>" +
+               "<p><strong>Gender: </strong>" + gn + "</p>" 
+
+     document.getElementById("output").innerHTML = info;
+    }
+  </script>
+</html>

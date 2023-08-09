@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Practical 5 On Its Way...</h1>
+    <h1 id="conf" style="color: blue;"></h1>
+<script>
+function Main(callback) {
+    setTimeout(function() {
+        callback("Practical Completed Good Job!!!");
+    }, 2000);
+    }
+    
+    function Main1(result) {
+    console.log("Result: " + result);
+    document.getElementById("conf").innerHTML = result;
+    }
+
+    Main(Main1);
+    
+</script>
+
+</body>
+</html>
